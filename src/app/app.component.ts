@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  heroes = [{
+    casa: 'DC',
+    nombre: 'Batman'
+  }, {
+    casa: 'Marvel',
+    nombre: 'Ironman'
+  }];
+
+  casaFiltro = '';
+
+  filtrarCasa( casa ) {
+
+    if ( casa === '') { return this.heroes; }
+
+    return this.heroes.filter( heroe => {
+      return heroe.casa === casa;
+    });
+
+  }
+
 }
